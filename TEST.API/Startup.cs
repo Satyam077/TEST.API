@@ -1,4 +1,4 @@
-﻿using TEST.Domain;
+﻿using TEST.Application;
 using TEST.Infrastructure;
 
 namespace TEST.API
@@ -7,7 +7,8 @@ namespace TEST.API
     {
         public static IServiceCollection InjectStartUpDI(this IServiceCollection service)
         {
-            service.InjectInfraDI();
+            service.InjectApplicationDI()
+                .InjectInfraDI();
             return service;
         }
     }
